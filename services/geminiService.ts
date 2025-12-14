@@ -55,7 +55,8 @@ export const analyzeVideoAndCreateRevivalPlan = async (
     
     Your task is to:
     1. Research this video to understand its content, find its *actual* current view count and publish date using Google Search.
-    2. Identify technical subjects and detect outdated tools (compare with 2025 standards).
+    2. Breakdown the video into small segments, for each segment add a summary and identify the subject discussed in the segment. Try to break down the video into small segments. 
+    3. For each subject, fact check it against google search and compare against latest standards.
     3. Map outdated tools to specific timestamped segments in the video.
     4. Create a comprehensive revival strategy including a new title, description, and script outline.
 
@@ -166,7 +167,7 @@ export const generateVisualOverlay = async (
       The user is updating this content.
       Update: ${updateContext}
       Task: Edit this image to reflect the NEW update.
-      Make it look like a high-production value YouTube thumbnail or overlay.
+      Keep most of the frame same and highlight what needs to be updated in the provided frame and overlay the text. Do not generate the full image from scratch.
     `;
   
     try {
